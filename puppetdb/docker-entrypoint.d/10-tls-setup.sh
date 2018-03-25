@@ -1,8 +1,10 @@
 #!/bin/bash
 
 CN=$(hostname)
-CA_SERVER=${CA_SERVER:-puppetca.local}
+CA_SERVER=${CA_SERVER:-puppetca.puppetstack}
 CERTFILE="/etc/puppetlabs/puppet/ssl/certs/${CN}.pem"
+POSTGRES_NODE=${POSTGRES_NODE:-postgres.puppetstack}
+POSTGRES_PORT=${POSTGRES_PORT:-5432}
 
 if [ "${USE_LEGACY_CA_API}" == "true" ]; then
   CA_API_URL=https://${CA_SERVER}:8140/production/certificate/ca
