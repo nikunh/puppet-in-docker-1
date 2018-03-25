@@ -11,13 +11,15 @@ to be run in Docker.
 
 ### Environment variables
 
-| Name              | Description                                     | Default value  |
-| ----              | -----------------------------------------       | -------------  |
-| CA_SERVER         | Puppet CA server to request certificate         | puppetca.local |
-| POSTGRES_PASSWORD | Password for Postgres user                      | -              |
-| POSTGRES_USER     | Username for Postgres connection                | -              |
-| USE_LEGACY_CA_API | If set to true, sets CA API URLs for Puppet 3.8 | -              |
-| PUPPETDB_NODETTL  | PuppetDB node-ttl (default was 7d)              | 30d            |
+| Name              | Description                                     | Default value         |
+| ----              | -----------------------------------------       | -------------         |
+| CA_SERVER         | Puppet CA server to request certificate         | puppetca.local        |
+| POSTGRES_PASSWORD | Password for Postgres user                      | -                     |
+| POSTGRES_USER     | Username for Postgres connection                | -                     |
+| USE_LEGACY_CA_API | If set to true, sets CA API URLs for Puppet 3.8 | -                     |
+| PUPPETDB_NODETTL  | PuppetDB node-ttl (default was 7d)              | 30d                   |
+| POSTGRES_NODE     | Postgres node name/ip value                     | postgres.puppetstack  |
+| POSTGRES_PORT     | Postgres port number                            | 5432                  |
 
 ## Details
 
