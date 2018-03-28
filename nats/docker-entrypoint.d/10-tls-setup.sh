@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CN=$(hostname)
-CA_SERVER=${CA_SERVER:-puppetca.local}
+CN=${NATS_CERT_CN:-${hostname}}
+CA_SERVER=${CA_SERVER:-puppetca.puppetstack}
 CERTFILE="/etc/nats/ssl/certs/${CN}.pem"
 
 if [ "${USE_LEGACY_CA_API}" == "true" ]; then
