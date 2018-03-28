@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CN=$(hostname)
+#CN=$(hostname)
+CN=${PUPPETSERVER_CERT_CN:-${hostname}}
 
 PUPPETDB_URL=https://${PUPPETDB_SERVER_URL}/status/v1/services/puppetdb-status
 
