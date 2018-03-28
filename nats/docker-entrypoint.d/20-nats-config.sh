@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CN=$(hostname)
+#CN=$(hostname)
+CN=${NATS_CERT_CN:-${hostname}}
 CERTFILE="/etc/nats/ssl/certs/${CN}.pem"
 KEYFILE="/etc/nats/ssl/private_keys/${CN}.pem"
 CAFILE="/etc/nats/ssl/certs/ca.pem"
