@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CN=$(hostname)
+#CN=$(hostname)
+CN=${PUPPETDB_CERT_CN:-puppetdb.puppetstack}
 CA_SERVER=${CA_SERVER:-puppetca.puppetstack}
 CERTFILE="/etc/puppetlabs/puppet/ssl/certs/${CN}.pem"
 POSTGRES_NODE=${POSTGRES_NODE:-postgres.puppetstack}
