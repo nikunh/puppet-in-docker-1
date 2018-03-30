@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #CN=$(hostname)
-CN=${PUPPETSERVER_CERT_CN:-`hostname`}}
+CN=${PUPPETSERVER_CERT_CN:-`hostname`}
 CA_SERVER=${CA_SERVER:-puppetca.puppetstack}
 CA_TTL=${CA_TTL:-5y}
 AUTOSIGN=${AUTOSIGN:-true}
