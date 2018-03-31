@@ -16,6 +16,14 @@ if [ -n "$PUPPETDB_SERVER_URL" ]; then
   done
   echo "---> PuppetDB ready at ${PUPPETDB_SERVER_URL}..."
 
+#put here to copy created certificates to be accesible by k8s fully quallified domain name. Otheriwse puppetdb stays in accesible when puppet tries to connect with FQDN
+cp ./etc/puppetlabs/puppet/ssl/certs/${CN}.pem /etc/puppetlabs/puppet/ssl/certs/`hostname -A`.pem
+chown puppet /etc/puppetlabs/puppet/ssl/certs/`hostname -A`.pem
+cp /etc/puppetlabs/puppet/ssl/private_keys/${CN}.pem /etc/puppetlabs/puppet/ssl/private_keys/`hostname -A`.pem
+chown puppet /etc/puppetlabs/puppet/ssl/private_keys/`hostname -A`.pem
+
+
+
   if [ "${USE_LEGACY_PUPPETDB}" == "true" ]; then
     echo "---> Configuring Puppetserver to connect to PuppetDB (legacy config)"
     cat <<EOF>/etc/puppetlabs/puppet/puppetdb.conf
