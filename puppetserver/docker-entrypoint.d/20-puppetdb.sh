@@ -17,10 +17,10 @@ if [ -n "$PUPPETDB_SERVER_URL" ]; then
   echo "---> PuppetDB ready at ${PUPPETDB_SERVER_URL}..."
 
 #put here to copy created certificates to be accesible by k8s fully quallified domain name. Otheriwse puppetdb stays in accesible when puppet tries to connect with FQDN
-cp /etc/puppetlabs/puppet/ssl/certs/${CN}.pem /etc/puppetlabs/puppet/ssl/certs/$(hostname)$(grep search /etc/resolv.conf | awk '{print $2}').pem
-chown puppet /etc/puppetlabs/puppet/ssl/certs/$(hostname)$(grep search /etc/resolv.conf | awk '{print $2}').pem
-cp /etc/puppetlabs/puppet/ssl/private_keys/${CN}.pem /etc/puppetlabs/puppet/ssl/private_keys/$(hostname)$(grep search /etc/resolv.conf | awk '{print $2}').pem
-chown puppet /etc/puppetlabs/puppet/ssl/private_keys/$(hostname)$(grep search /etc/resolv.conf | awk '{print $2}').pem
+cp /etc/puppetlabs/puppet/ssl/certs/${CN}.pem /etc/puppetlabs/puppet/ssl/certs/$(hostname).$(grep search /etc/resolv.conf | awk '{print $2}').pem
+chown puppet /etc/puppetlabs/puppet/ssl/certs/$(hostname).$(grep search /etc/resolv.conf | awk '{print $2}').pem
+cp /etc/puppetlabs/puppet/ssl/private_keys/${CN}.pem /etc/puppetlabs/puppet/ssl/private_keys/$(hostname).$(grep search /etc/resolv.conf | awk '{print $2}').pem
+chown puppet /etc/puppetlabs/puppet/ssl/private_keys/$(hostname).$(grep search /etc/resolv.conf | awk '{print $2}').pem
 
 
 
