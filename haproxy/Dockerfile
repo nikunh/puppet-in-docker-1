@@ -14,7 +14,7 @@ LABEL org.label-schema.vendor="VSHN AG" \
 EXPOSE 8140
 
 ENTRYPOINT ["dumb-init", "/docker-entrypoint.sh"]
-CMD ["haproxy", "sh"]
+CMD ["sh"]
 
 COPY Dockerfile /
 
