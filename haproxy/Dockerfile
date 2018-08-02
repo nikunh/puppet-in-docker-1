@@ -13,7 +13,7 @@ LABEL org.label-schema.vendor="VSHN AG" \
 
 EXPOSE 8140
 
-#ENTRYPOINT ["dumb-init", "/docker-entrypoint.sh"]
+ENTRYPOINT ["dumb-init", "/docker-entrypoint.sh"]
 #ENTRYPOINT ["dumb-init", "/bin/sh"]
 CMD ["/bin/sh"]
 
