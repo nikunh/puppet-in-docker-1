@@ -35,7 +35,7 @@ if [ ! -f ${HAPROXY_PEM_FILE} ]; then
         echo "---> Waiting for CA API at ${CA_SERVER}..."
         sleep 10
     done
-
+sleep 6000
     echo "---> Requesting certificate for ${CN} from ${CA_SERVER}"
     su -s /bin/sh haproxy -c "/usr/bin/ruby \
         /usr/local/bin/request-cert.rb \
